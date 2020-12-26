@@ -1,0 +1,66 @@
+<div class="container"> 
+    <form   [formGroup]="_form" novalidate>
+    
+        <div class="col-md-12  ">
+     
+        
+ 
+        <div class="col-md-4 mb-3">
+            <label>Name:</label> 
+            <input type="text" formControlName="name"
+            class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                <div *ngIf="f.name.errors.required"> </div>
+            </div>
+  
+         </div>
+         <div class="col-md-4 mb-3">
+            <label>NoOfSeats</label>
+            <input type="number" formControlName="noOfSeats" class="form-control" 
+            [ngClass]="{ 'is-invalid': submitted && f.noOfSeats.errors }" />
+            <div *ngIf="submitted && f.noOfSeats.errors" class="invalid-feedback">
+                <div *ngIf="f.noOfSeats.errors.required"> </div>
+            </div>
+  
+        </div>
+      
+      <div class="col-md-4 mb-3">
+          <label>Description</label>
+          <input type="text" formControlName="description" class="form-control" 
+          [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
+          <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+              <div *ngIf="f.description.errors.required"> </div>
+          </div>
+
+      </div>
+   
+    <!-- <div  class="level col-md-4 mb-3">
+       
+        <div class="input-group">
+            <input class="form-control" placeholder="yyyy-mm-dd"
+                   name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+            </div>
+          </div>
+    </div> -->
+  
+        
+        <div  class="level col-md-4 mb-3">
+       
+          <div class="level-right col-md-4 mb-3">
+          
+              <button class="button is-primary" (click)="onSubmit(_form)"  >Create</button>
+            </div>
+            
+          </div> 
+  
+       
+      </div>
+   
+    </form>
+     
+     
+    
+  </div>
+  

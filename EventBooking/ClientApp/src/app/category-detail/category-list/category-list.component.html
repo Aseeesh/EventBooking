@@ -1,0 +1,13 @@
+<h2>Category</h2>
+<span class="badge">
+    <button class="nav-link text-dark" [routerLink]="['/category/editor/']">add New Category</button>
+</span>
+
+<ul>
+    <li *ngFor="let item of _list">
+    <span class="badge">
+        <a class="nav-link text-dark" [routerLink]="['/category/editor/']+item.id">{{item.id}} </a>
+        <!-- <a href="" (click)="_Deails(item.id)"></a> -->
+        </span> name: {{item.name}} title: {{item.title}}description: {{item.description}}
+  </li>
+</ul>

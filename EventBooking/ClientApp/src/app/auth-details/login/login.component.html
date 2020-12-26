@@ -1,0 +1,53 @@
+﻿<div class="container"> 
+       <form   [formGroup]="loginForm" novalidate>
+       
+           <div class="col-md-12  ">
+        
+           
+    
+           <div class="col-md-4 mb-3">
+               <label>UserName:</label> 
+               <input type="text" formControlName="username"
+               class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+               <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                   <div *ngIf="f.username.errors.required"> </div>
+               </div>
+     
+            </div>
+        
+         
+         <div class="col-md-4 mb-3">
+             <label>Password</label>
+             <input type="text" formControlName="password" class="form-control" 
+             [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+             <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                 <div *ngIf="f.password.errors.required"> </div>
+             </div>
+   
+         </div>
+      
+       
+     
+           
+           <div  class="level col-md-4 mb-3">
+          
+             <div class="level-right col-md-4 mb-3">
+             
+                 <button class="button is-primary" (click)="onSubmit(loginForm)"  >Create</button>
+               </div>
+               <div class="level-right col-md-4 mb-3">
+             
+                <button class="button is-primary" [routerLink]="['/auth/register']" >Register</button>
+              </div>
+              
+             </div> 
+     
+          
+         </div>
+      
+       </form>
+        
+        
+       
+     </div>
+     

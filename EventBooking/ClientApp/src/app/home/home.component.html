@@ -1,0 +1,28 @@
+<h1>Welcome to Event Booking System</h1>
+<p>Event List</p> 
+<button class="button is-primary" (click)="exportexcel()">
+    cloud_download 
+</button>
+<div  *ngFor="let item of _EventList"   >
+        
+   
+  <div id="excel-table" class="form-row col-md-12 ">
+    <div class="col-md-2 ">
+      <span class="badge">SNo.</span>{{item.id}}  
+    </div>
+    <div class="col-md-2">
+      <span class="badge">name.</span>{{item.name}}  
+    </div>
+    <div class="col-md-2 ">
+      <span class="badge">title.</span>{{item.title}}  
+    </div>
+    <div class="col-md-2 ">
+      <span class="badge">description.</span>{{item.description}}  
+    </div>
+    <div class="col-md-2 "> 
+      <button class="button is-primary" (click)="onSelect(item)"  >Select Ticket</button>
+    </div>
+    </div>
+    </div>
+
+ 

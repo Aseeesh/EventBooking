@@ -1,0 +1,13 @@
+<h2>Events</h2>
+<span class="badge">
+    <button class="nav-link text-dark" [routerLink]="['/event/editor/']">add New Event</button>
+</span>
+
+<ul>
+    <li *ngFor="let event of _EventList">
+    <span class="badge">
+        <a class="nav-link text-dark" [routerLink]="['/event/editor/']+event.id">{{event.id}} </a>
+        <!-- <a href="" (click)="eventDeails(event.id)"></a> -->
+        </span> name: {{event.name}} title: {{event.title}}description: {{event.description}}
+  </li>
+</ul>

@@ -1,0 +1,10 @@
+<h2>My-Tickets</h2>
+ 
+<ul>
+    <li *ngFor="let item of _list">
+    <span class="badge">
+        <a class="nav-link text-dark" [routerLink]="['/ticket/editor/']+item.id">{{item.id}} </a>
+        <!-- <a href="" (click)="_Deails(item.id)"></a> -->
+        </span> name: {{item.name}} title: {{item.title}}description: {{item.description}}
+  </li>
+</ul>

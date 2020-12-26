@@ -1,0 +1,84 @@
+<div class="container"> 
+    <form   [formGroup]="eventForm" novalidate>
+    
+        <div class="col-md-12  ">
+          <div class="form-row">
+        
+          <div class="col-md-4 mb-3">
+            <label class="col-form-label required">Event Category</label>
+       
+              <ng-select [items]="categoryData$"
+              class="form-control" 
+              bindLabel="name" 
+              appendTo="body" 
+              [(ngModel)]="selectedCategory"
+              [ngClass]="{ 'is-invalid': submitted && f.eventCategory.errors}"
+              formControlName="eventCategory"
+              
+              >
+          </ng-select>
+          <div *ngIf="submitted && f.eventCategory.errors" class="invalid-feedback">
+            <div *ngIf="f.eventCategory.errors.required"> </div>
+          </div>
+                
+          </div>
+        <div class="col-md-4 mb-3">
+            <label>Name:</label> 
+            <input type="text" formControlName="name"
+            class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                <div *ngIf="f.name.errors.required"> </div>
+            </div>
+  
+         </div>
+         <div class="col-md-4 mb-3">
+            <label>Title</label>
+            <input type="text" formControlName="title" class="form-control" 
+            [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
+            <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                <div *ngIf="f.title.errors.required"> </div>
+            </div>
+  
+        </div>
+      
+      <div class="col-md-4 mb-3">
+          <label>Description</label>
+          <input type="text" formControlName="description" class="form-control" 
+          [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
+          <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+              <div *ngIf="f.description.errors.required"> </div>
+          </div>
+
+      </div>
+   
+    <!-- <div  class="level col-md-4 mb-3">
+       
+        <div class="input-group">
+            <input class="form-control" placeholder="yyyy-mm-dd"
+                   name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+            </div>
+          </div>
+    </div> -->
+  
+        
+        <div  class="level col-md-4 mb-3">
+       
+          <div class="level-right col-md-4 mb-3">
+          
+              <button class="button is-primary" (click)="onSubmit(eventForm)"  >Create</button>
+            </div>
+            
+          </div> 
+  
+       
+      </div>
+   
+     </div>
+    </form>
+     
+
+    
+  </div>
+  
